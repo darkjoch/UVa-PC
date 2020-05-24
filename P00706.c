@@ -1,83 +1,79 @@
 #include<stdio.h>
 
-int number0[5][3] = {
-					{0,1,0},
-					{1,0,1},
-					{0,0,0},
-					{1,0,1},
-					{0,1,0}};
-					
-int number1[5][3] = {
-					{0,0,0},
-					{0,0,1},
-					{0,0,0},
-					{0,0,1},
-					{0,0,0}};
-					
-int number2[5][3] = {
-					{0,1,0},
-					{0,0,1},
-					{0,1,0},
-					{1,0,0},
-					{0,1,0}};
-					
-int number3[5][3] = {
-					{0,1,0},
-					{0,0,1},
-					{0,1,0},
-					{0,0,1},
-					{0,1,0}};
-					
-int number4[5][3] = {
-					{0,0,0},
-					{1,0,1},
-					{0,1,0},
-					{0,0,1},
-					{0,0,0}};
-					
-int number5[5][3] = {
-					{0,1,0},
-					{1,0,0},
-					{0,1,0},
-					{0,0,1},
-					{0,1,0}};
-					
-int number6[5][3] = {
-					{0,1,0},
-					{1,0,0},
-					{0,1,0},
-					{1,0,1},
-					{0,1,0}};
-
-int number7[5][3] = {
-					{0,1,0},
-					{0,0,1},
-					{0,0,0},
-					{0,0,1},
-					{0,0,0}};
-
-int number8[5][3] = {
-					{0,1,0},
-					{1,0,1},
-					{0,1,0},
-					{1,0,1},
-					{0,1,0}};
-
-int number9[5][3] = {
-					{0,1,0},
-					{1,0,1},
-					{0,1,0},
-					{0,0,1},
-					{0,1,0}};
-					
 #define ROW   5
 #define COL   3
 
-typedef int Array2D[ROW][COL];
-			
-void resize(int val, int size, int digitCount);
+int number0[ROW][COL] = {
+					{0,1,0},
+					{1,0,1},
+					{0,0,0},
+					{1,0,1},
+					{0,1,0}};
+					
+int number1[ROW][COL] = {
+					{0,0,0},
+					{0,0,1},
+					{0,0,0},
+					{0,0,1},
+					{0,0,0}};
+					
+int number2[ROW][COL] = {
+					{0,1,0},
+					{0,0,1},
+					{0,1,0},
+					{1,0,0},
+					{0,1,0}};
+					
+int number3[ROW][COL] = {
+					{0,1,0},
+					{0,0,1},
+					{0,1,0},
+					{0,0,1},
+					{0,1,0}};
+					
+int number4[ROW][COL] = {
+					{0,0,0},
+					{1,0,1},
+					{0,1,0},
+					{0,0,1},
+					{0,0,0}};
+					
+int number5[ROW][COL] = {
+					{0,1,0},
+					{1,0,0},
+					{0,1,0},
+					{0,0,1},
+					{0,1,0}};
+					
+int number6[ROW][COL] = {
+					{0,1,0},
+					{1,0,0},
+					{0,1,0},
+					{1,0,1},
+					{0,1,0}};
 
-int contdigit = 0;
+int number7[ROW][COL] = {
+					{0,1,0},
+					{0,0,1},
+					{0,0,0},
+					{0,0,1},
+					{0,0,0}};
+
+int number8[ROW][COL] = {
+					{0,1,0},
+					{1,0,1},
+					{0,1,0},
+					{1,0,1},
+					{0,1,0}};
+
+int number9[ROW][COL] = {
+					{0,1,0},
+					{1,0,1},
+					{0,1,0},
+					{0,0,1},
+					{0,1,0}};
+
+typedef int Array2D[ROW][COL];
 					
 int main() {
 	
@@ -107,11 +103,7 @@ int main() {
 		int y = size + 2;
 		int bufferSize = (y + 1) * numberSize;
 		char buffer[x][bufferSize];
-		int m = 0;
-		int n = 0;
-		int cont = 0;
-		int val;
-		int digitToDisplay;
+		int digitCounter = 0;
 		
 		int digitIndex;
 		for(digitIndex=numberSize-1; digitIndex >= 0; digitIndex--) {
@@ -185,14 +177,14 @@ int main() {
 					int j;
 					for(j=0; j <= y; j++) {
 						if(j==y){
-							buffer[i][j+((y+1)*cont)] = ' ';
+							buffer[i][j+((y+1)*digitCounter)] = ' ';
 						} else {
-							buffer[i][j+((y+1)*cont)] = resizedNumber[i][j];
+							buffer[i][j+((y+1)*digitCounter)] = resizedNumber[i][j];
 						}
 					}
 				}
 			}
-			cont++;
+			digitCounter++;
 		}
 		
 		{
